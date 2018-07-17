@@ -15,7 +15,7 @@
 @property (strong, nonatomic) NSString *title;
 
 //A little movie description
-@property (strong, nonatomic) NSString *preview;
+@property (strong, nonatomic) NSString *overview;
 
 //Movie released date
 @property (strong, nonatomic) NSDate *releaseDate;
@@ -33,5 +33,12 @@
  Return poster image url in a short dimention
  */
 - (NSString *)thumbnailImageUrl;
+
+/**
+ Backdrop image url
+
+ @return url string
+ */
+- (NSString *)backDropImageUrl;
 
 @end

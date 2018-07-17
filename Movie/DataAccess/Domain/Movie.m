@@ -12,7 +12,7 @@
 
 @synthesize identifier;
 @synthesize title;
-@synthesize preview;
+@synthesize overview;
 @synthesize releaseDate;
 @synthesize movieScore;
 @synthesize backdropImagePath;
@@ -20,6 +20,10 @@
 
 - (NSString *)thumbnailImageUrl{
     return [NSString stringWithFormat:@"https://image.tmdb.org/t/p/w500%@", self.posterImagePath];
+}
+
+- (NSString *)backDropImageUrl{
+    return [NSString stringWithFormat:@"https://image.tmdb.org/t/p/w500%@", self.backdropImagePath];
 }
 
 @end

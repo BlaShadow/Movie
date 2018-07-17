@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "MovieDetailsTableViewController.h"
+
 #import "MovieTableViewCell.h"
 #import "DataAccessFacade.h"
 
@@ -24,6 +26,7 @@
 
 //Const
 NSString * const kMovieCellIdentifier = @"MOVIE_CELL";
+NSString * const kMovideDetailsSegue = @"MOVIE_DETAILS_SEGUE";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -62,6 +65,15 @@ NSString * const kMovieCellIdentifier = @"MOVIE_CELL";
     [super didReceiveMemoryWarning];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:kMovideDetailsSegue]){
+        MovieDetailsTableViewController *controller = segue.destinationViewController;
+        
+        //Setup details view controller
+        [controller setupViewControllerWithMovie:sender];
+    }
+}
+
 #pragma mark -
 #pragma mark Table view delegate & Data Source
 
@@ -81,6 +93,12 @@ NSString * const kMovieCellIdentifier = @"MOVIE_CELL";
     [cell setupMovieCellWithMovie:item];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Movie *selectedMovie = [self.movies objectAtIndex:indexPath.row];
+    
+    [self performSegueWithIdentifier:kMovideDetailsSegue sender:selectedMovie];
 }
 
 @end

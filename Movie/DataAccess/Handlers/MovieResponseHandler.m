@@ -67,7 +67,7 @@
     
     item.identifier = [[rawItem objectForKey:@"id"] integerValue];
     item.title = [rawItem objectForKey:@"title"];
-    item.preview = [rawItem objectForKey:@"preview"];
+    item.overview = [rawItem objectForKey:@"overview"];
     item.releaseDate = [NSDate dateWithString:[rawItem objectForKey:@"release_date"]];
     item.backdropImagePath = [rawItem objectForKey:@"backdrop_path"];
     item.posterImagePath = [rawItem objectForKey:@"poster_path"];

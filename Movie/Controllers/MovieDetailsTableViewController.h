@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class Movie;
+
 @interface MovieDetailsTableViewController : UITableViewController
+
+/**
+ Setup view controller with selected movie
+
+ @param movie selecte movie
+ */
+- (void)setupViewControllerWithMovie:(Movie *)movie;
 
 @end
