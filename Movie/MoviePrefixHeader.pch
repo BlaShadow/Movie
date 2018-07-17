@@ -1,0 +1,20 @@
+//
+//  MoviePrefixHeader.pch
+//  Movie
+//
+//  Created by Blashadow on 7/16/18.
+//  Copyright © 2018 Blashadow. All rights reserved.
+//
+
+#ifndef MoviePrefixHeader_pch
+#define MoviePrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <Foundation/Foundation.h>
+
+//Helpers
+#import "NSDate+Helper.h"
+
+#endif /* MoviePrefixHeader_pch */
